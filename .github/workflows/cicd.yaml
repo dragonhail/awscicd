@@ -39,8 +39,13 @@ jobs:
           role-to-assume: arn:aws:iam::905418305225:role/awscicd
           role-session-name: sampleSessionName
           aws-region: ap-northeast-2
+      
+      # 4. ECR 로그인
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@62f4f872db3836360b72999f4b87f1ff13310f3a
 
-      # 4. 이미지 빌드 및 ECR에 푸시
+      # 5. 이미지 빌드 및 ECR에 푸시
       - name: Build and Push Image to AWS ECR
         id: build-image
         env:
