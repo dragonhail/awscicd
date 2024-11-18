@@ -3,7 +3,6 @@
     "containerDefinitions": [
         {
             "name": "cicd",
-            "image": "nginx",
             "cpu": 0,
             "portMappings": [
                 {
